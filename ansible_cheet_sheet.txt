@@ -19,19 +19,12 @@ sudo hostnamectl set-hostname Control-Node
 sudo yum check-update
 
 # Install latest version of Python. 
-sudo yum install python3.9 -y
-[sudo yum install python3-pip -y ]
+sudo yum install python3-pip -y 
 python3 --version
-
-# Lets link python to python3. Below steps are not mandatory 
-sudo ln -s /usr/bin/python3.9 /usr/bin/python
-python --version
-# It should show Python3.9.6
 
 # Install awscli, boto, boto3 and ansible
 # Boto/Boto3 are AWS SDK which will be needed while accessing AWS APIs
 sudo pip3 install awscli boto boto3 ansible==4.10.0
-ansible --version
 pip show ansible
 
 # Now configure aws cli to provide the credentials of the IAM user.
@@ -65,8 +58,7 @@ sudo vi /etc/ansible/hosts
 # Add the prive IP addresses, by pressing "INSERT" 
 < Add Managed Node 1 Private IP >
 < Add Managed Node 2 Private IP >
-172.31.80.253
-172.31.90.114
+
 
 # Save the file using "ESCAPE + :wq!"
 
